@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <title>応用例:オブジェクト変数と配列の組み合わせ</title>
+</head>
+
+<body>
+  <h1>ob3：応用例</h1>
+  <form action="#">
+    <input id="name" type="text">
+    <input id="tel" type="text">
+    <button id="btn">登録</button>
+  </form>
+  <ul id="view"></ul>
+  <script>
+    //１. a配列を作成(グローバルに配置)
+    const data = [];
+
+    //2. #btnをクリックしたら実行
+    $("#btn").on("click", function () {
+
+      //3．オブジェクト変数作成
+      const ob = {
+        name: $("#name").val(),
+        tel: $("#tel").val()
+      };
+
+      //4.配列にpush(追加)する
+      data.push(ob);
+
+      //★ ul#view内を上書き ★
+      let el = '';
+      for (let i = 0; i < data.length; i++) {
+        el += '<li>' + data[i].name + ":" + data[i].tel + '</li>';
+      }
+      $("#view").html(el);
+
+    });
+
+  </script>
+</body>
+
+</html>

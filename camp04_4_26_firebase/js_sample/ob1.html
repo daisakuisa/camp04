@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>オブジェクト変数1</title>
+  </head>
+
+  <body>
+    <h1>ob1：オブジェクト変数</h1>
+    <div id="view"></div>
+    <script>
+      //1．オブジェクト変数を３個作成
+      const ob1 = {
+        name: "yama",
+        tel: "090-0000-0000",
+        addres: "表参道",
+      };
+      const hito = {
+        name: "daisaku isahara",
+        age: "33",
+        syumi: "飲酒",
+      };
+      console.log(hito, "作ったデータの塊");
+      console.log(hito.syumi, "飲酒");
+
+      console.log("オブジェクト変数：", ob1); //,を使ってるのがポイント（+で文字列結合はできない）
+
+      //表示してみましょう！
+      $("#view").html(ob1.name);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Chatアプリ</title>
+</head>
+
+<body>
+  <!-- ブラウザの画面に見える内容 -->
+
+  <div>
+    <!-- 名前 -->
+    名前
+    <input type="text" id="username">
+  </div>
+
+  <div>
+    <!-- テキストエリア -->
+    テキスト
+    <textarea name="" id="text" cols="30" rows="10"></textarea>
+  </div>
+
+  <div>
+    <!-- 送信ボタン -->
+    <button id="send">送信</button>
+  </div>
+
+  <div>
+    <!-- 保存されたデータが表示される箇所 -->
+    <div id="output"></div>
+  </div>　　　　
+  <!-- ブラウザの画面に見える内容 -->
+
+
+  <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- JQuery -->
+
+  <!--** 以下Firebase **-->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDQLnYrg96JQ_LHTkYzMO2WBUaWCM0if9c",
+      authDomain: "camp-dhu.firebaseapp.com",
+      databaseURL: "https://camp-dhu.firebaseio.com",
+      projectId: "camp-dhu",
+      storageBucket: "",
+      messagingSenderId: "28465852467",
+      appId: "1:28465852467:web:2f212d9c12647db97a7346"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    //firebaseのデーターベース（保存させる場所）を使いますよ
+    const newPostRef = firebase.database().ref();
+
+    // ここから下にjqueryの処理を書いて練習します
+
+    // 送信ボタンをクリックされたら次の処理をする
+    $("#send").on("click", function () {
+      // データを登録で送る
+      newPostRef.push({
+        username: $("#username").val(), //名前
+        text: $("#text").val(), //テキストエリア
+      })
+      $("#text").val(""); //空にする
+      $("#username").val(""); //空にする
+    });
+
+    // 受信処理
+    newPostRef.on("child_added", function (data) {
+      let v = data.val(); //ここに保存されたデータが全て入ってくる
+      // let k = data.key; //今回は使いません
+
+      console.log(v); //vの変数に入っているオブジェクトを全てみる
+
+      let str = `<p>${v.username}<br>${v.text}</p>`;
+
+      // ここでデータをhtmlに埋め込む
+      $("#output").prepend(str);
+    })
+
+    $("#text").on("keydown", function (e) {
+      console.log(e, "event");
+
+      if (e.keyCode === 13) {
+        newPostRef.push({
+          username: $("#username").val(), //名前
+          text: $("#text").val(), //テキストエリア
+        })
+        $("#text").val(""); //空にする
+        $("#username").val(""); //空にする
+      }
+    })
+  </script>
+</body>
+
+</html>

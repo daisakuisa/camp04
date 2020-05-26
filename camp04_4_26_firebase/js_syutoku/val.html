@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>jsでフォーム要素から値（文字や数字など）を取得する練習</title>
+  </head>
+
+  <body>
+    <div>
+      <input
+        type="text"
+        id="moji"
+      />文字やテキストが入ります。idをmojiとしている
+    </div>
+    <div>
+      <!-- この送信のボタンをおしたらjsを使って入力されたものを取得する -->
+      <button id="sousin">送信</button>
+    </div>
+
+    <!-- jqueryを使うので先に読み込ませる -->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <!-- javascriptのコードをここから下に書く -->
+    <script>
+      // 1.clickイベントを記載する
+      $("#sousin").on("click", function () {
+        //.val();このおまじないを使うと
+        // 入力されている値（文字とかデータとか）
+        // が取得できる
+        var moji = $("#moji").val();
+        console.log(moji);
+        $("body").append(moji);
+        // bodyタグに文字が追加されたら、id=mojiの中身を空にする
+        $("#moji").val("");
+        //このしたのカッコは消しちゃダメ
+      });
+    </script>
+  </body>
+</html>

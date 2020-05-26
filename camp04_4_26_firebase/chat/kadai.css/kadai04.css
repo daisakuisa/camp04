@@ -1,0 +1,121 @@
+.body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background: #e6e3e37e;
+  /* color: #ffffff; */
+}
+.dai {
+  font-size: 50px;
+  text-align: center;
+  color: #ffffff;
+  background: linear-gradient(45deg, #3f42fc80 0%, #0c0077 100%);
+}
+
+.title {
+  text-align: center;
+  /* background: #39a9d6; */
+}
+
+input[type="text"],
+input[type="text"]:focus {
+  /* color: #9aaebc; */
+  /* border: none; */
+  /* background: rgba(0, 0, 0, 0.11); */
+  /* max-width: 2000px; */
+  width: 315px;
+  height: 20px;
+  border-radius: 0.67em;
+}
+.text {
+  text-align: center;
+}
+#text {
+  border-radius: 0.67em;
+}
+
+.limit {
+  text-align: center;
+  /* border: 3px solid #18f848; */
+}
+.limit.text {
+  text-align: left;
+  display: block;
+}
+.butt {
+  text-align: center;
+}
+#post {
+  font-size: 15px;
+  cursor: pointer;
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #fff;
+  background-image: linear-gradient(45deg, #ffc107 0%, #ff8b5f 100%);
+  transition: 0.4s;
+}
+#post:hover {
+  background-image: linear-gradient(45deg, #ffc107 0%, #f76a35 100%);
+}
+#outp {
+  margin: auto;
+  text-align: center;
+}
+/* .output.outtxt {
+  text-align: left;
+  display: inline-block; */
+/* } */
+/* host-context  */
+.outtxt {
+  margin: 5px auto;
+  text-align: left;
+  width: 60%;
+  display: block;
+  border: 1px solid #00000052;
+  background: #ffffff;
+  border-radius: 0.67em;
+}
+
+#done {
+  font-size: 15px;
+  position: relative;
+  width: 0.9em;
+  height: 1em;
+  border-left: 0.1em solid #f76a35;
+  border-right: 0.1em solid #f76a35;
+  border-bottom: 0.1em solid #f76a35;
+  border-radius: 0 0 0.1em 0.1em;
+  background: linear-gradient(to bottom, #f76a35 0%, #f76a35 100%) 0.2em 0.2em,
+    linear-gradient(to bottom, #f76a35 0%, #f76a35 100%) 0.4em 0.2em,
+    linear-gradient(to bottom, #f76a35 0%, #f76a35 100%) 0.6em 0.2em;
+  background-size: 0.1em 0.8em;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+#done::before {
+  text-align: center;
+  content: "";
+  position: absolute;
+  top: -0.1em;
+  left: -0.2em;
+  width: 1.3em;
+  height: 0.1em;
+  background-color: #f76a35;
+}
+#done::after {
+  content: "";
+  position: absolute;
+  top: -0.3em;
+  left: 0.1em;
+  width: 0.5em;
+  height: 0.2em;
+  border-top: 0.1em solid #f76a35;
+  border-left: 0.1em solid #f76a35;
+  border-right: 0.1em solid #f76a35;
+  border-radius: 0.1em 0.1em 0 0;
+}
+
+/* cursor: pointer; */
+/* color: orange;
+} */

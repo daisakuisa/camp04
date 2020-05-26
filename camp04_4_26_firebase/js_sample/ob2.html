@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>オブジェクト変数と配列の組み合わせ</title>
+  </head>
+  <body>
+    <h1>ob2：オブジェクト変数と配列の組み合わせ</h1>
+    <script>
+      //１．a配列を作成
+      const a = [];
+
+      //２．オブジェクト変数を３個作成
+      const ob1 = { name: "yama", tel: "090-0000-0000" };
+      const ob2 = { name: "sasa", tel: "090-0000-0000" };
+      const ob3 = { name: "suzu", tel: "090-0000-0000" };
+
+      //３.配列にpush(追加)する
+      a.push(ob1);
+      a.push(ob2);
+      a.push(ob3);
+      // 配列の中身を確認する（タンス）
+      console.log("オブジェクト変数：", a); //,を使ってるのがポイント（+で文字列結合はできない）
+    </script>
+  </body>
+</html>

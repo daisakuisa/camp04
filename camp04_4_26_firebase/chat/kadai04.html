@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODOアプリ</title>
+    <link rel="stylesheet" href="kadai.css/kadai04.css" />
+    <link rel="stylesheet" href="kadai.css/reset.css" />
+  </head>
+
+  <body class="body">
+    <!-- ブラウザの画面に見える内容 -->
+    <h1 class="dai">ToDo List</h1>
+    <div class="title">
+      <!-- 題名 -->
+      <input type="text" id="title" placeholder="タイトル" />
+    </div>
+
+    <div class="text">
+      <!-- テキストエリア -->
+      <textarea id="text" placeholder="詳細" cols="50" rows="10"></textarea>
+    </div>
+    <div class="limit">
+      <!---　期限の設定　-->
+      <input type="text" id="e_data" placeholder="期限を設定（必須）" />
+    </div>
+    <!-- 作成ボタン -->
+    <div class="butt">
+      <button id="post">作成</button>
+    </div>
+
+    <div>
+      <!-- 保存されたデータが表示される箇所 -->
+      <div id="outp"></div>
+    </div>
+
+    <!--/ ブラウザの画面に見える内容 -->
+    <!-- JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!--** 以下Firebase **-->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <!-- ここにfirebaseのscriptを貼り付ける -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+    <script src="js/kadai04.js"></script>
+  </body>
+</html>
